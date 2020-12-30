@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">ترك ملاحظات الإجازة </h3>
+                        <h3 class="card-title float-right">ترك ملاحظات الإجازة </h3>
                     </div>
                     <!-- /.card-header -->
 
@@ -49,9 +49,9 @@
                         {% csrf_token %}
                         <div class="card-body">
                            
-                            <div class="form-group">
+                            <div class="form-group text-right">
                                 <label>الملاحظة </label>
-                                <textarea name="feedback_message" class="form-control" rows="6" placeholder="محتوى الرسالة"></textarea>
+                                <textarea name="feedback_message" class="form-control text-right" rows="6" placeholder="محتوى الرسالة"></textarea>
                             </div>
 
 
@@ -59,7 +59,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">ترك ملاحظة</button>
+                        <button type="submit" class="btn btn-primary float-right">ترك ملاحظة</button>
                         </div>
 
                     </form>
@@ -76,7 +76,7 @@
                 <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Feedback History</h3>
+                            <h3 class="card-title float-right">سجل الملاحظات</h3>
                         </div>
 
                         <div class="card-body">
@@ -84,17 +84,19 @@
                                 <table class="table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th>الرقم</th>
-                                        <th>محتوى الرسالة</th>
                                         <th>ملاحظة الرد</th>
+                                        <th>محتوى الرسالة</th>
+                                        <th>الرقم</th>
+
                                     </tr>
                                     </thead>
                                     
                                     {% for row in feedback_data %}
                                     <tr>
-                                        <td>{{ row.id }}</td>
-                                        <td>{{ row.feedback }}</td>
                                         <td>{{ row.feedback_reply }}</td>
+                                        <td>{{ row.feedback }}</td>
+                                        <td>{{ row.id }}</td>
+
                                     </tr>
                                     {% endfor %}
                                 </table>

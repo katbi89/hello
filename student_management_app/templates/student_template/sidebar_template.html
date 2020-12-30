@@ -21,7 +21,7 @@
         </div>
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-2 text-right">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
@@ -29,55 +29,60 @@
             <li class="nav-item">
               {% url 'student_home' as student_home %}
               <a href="{{ student_home }}" class="nav-link {% if request.path == student_home %} active {% endif %}">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   الرئيسية
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'student_view_attendance' as student_view_attendance %}
               <a href="{{ student_view_attendance }}" class="nav-link {% if request.path == student_view_attendance %} active {% endif %}">
-                <i class="nav-icon fas fa-calendar-alt"></i>
                 <p>
                   عرض الحضور
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-calendar-alt"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'student_view_result' as student_view_result %}
               <a href="{{ student_view_result }}" class="nav-link {% if request.path == student_view_result %} active {% endif %}">
-                <i class="nav-icon fas fa-tasks"></i>
                 <p>
                   عرض النتائج
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-tasks"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'student_apply_leave' as student_apply_leave %}
               <a href="{{ student_apply_leave }}" class="nav-link {% if request.path == student_apply_leave %} active {% endif %}">
-                <i class="nav-icon fas fa-envelope-open-text"></i>
                 <p>
-                  تطبيق الإجازة 
+                  طلب إجازة
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-envelope-open-text"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'student_feedback' as student_feedback %}
               <a href="{{ student_feedback }}" class="nav-link {% if request.path == student_feedback %} active {% endif %}">
-                <i class="nav-icon fas fa-comments"></i>
                 <p>
                   إرسال ملاحظة
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-comments"></i>
+
               </a>
             </li>
 

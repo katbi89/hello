@@ -1,7 +1,7 @@
 {% extends 'student_template/base_template.html' %}
 
 {% block page_title %}
-ترك تقرير والتقدم بطلب للحصول على الإجازة 
+طلب إجازة
 {% endblock page_title %}
 
 {% block main_content %}
@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تطبيق مغادرة</h3>
+                        <h3 class="card-title float-right">طلب إجازة</h3>
                     </div>
                     <!-- /.card-header -->
 
@@ -47,16 +47,16 @@
                             
                     <form method="POST" action="{% url 'student_apply_leave_save' %}">
                         {% csrf_token %}
-                        <div class="card-body">
+                        <div class="card-body text-right">
                            
                             <div class="form-group">
                                 <label>تاريخ الإجازة  </label>
-                                <input type="date" name="leave_date" class="form-control" />
+                                <input type="date" name="leave_date" class="form-control text-right" />
                             </div>
 
                             <div class="form-group">
                                 <label>سبب الإجازة  </label>
-                                <textarea name="leave_message" class="form-control" rows="6" placeholder="إترك رسالتك"></textarea>
+                                <textarea name="leave_message" class="form-control text-right" rows="6" placeholder="إترك رسالتك"></textarea>
                             </div>
 
 
@@ -64,7 +64,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">تطبيق الإجازة </button>
+                        <button type="submit" class="btn btn-primary float-right">تطبيق الإجازة </button>
                         </div>
 
                     </form>
@@ -81,7 +81,7 @@
                 <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">سجل تطبيق الإجازة </h3>
+                            <h3 class="card-title float-right">سجل تطبيق الإجازة </h3>
                         </div>
 
                         <div class="card-body">
@@ -89,18 +89,15 @@
                                 <table class="table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th>الرقم</th>
-                                        <th>تاريخ الإجازة </th>
-                                        <th>رسالة الإجازة </th>
                                         <th>الحالة</th>
+                                        <th>رسالة الإجازة </th>
+                                        <th>تاريخ الإجازة </th>
+                                        <th>الرقم</th>
                                     </tr>
                                     </thead>
                                     
                                     {% for leave in leave_data %}
                                     <tr>
-                                        <td>{{ leave.id }}</td>
-                                        <td>{{ leave.leave_date }}</td>
-                                        <td>{{ leave.leave_message }}</td>
                                         <td>
                                             {% if leave.leave_status == 1 %}
                                                 <span class="alert alert-success">قبول</span>
@@ -110,6 +107,10 @@
                                                 <span class="alert alert-warning">تعليق</span>
                                             {% endif %}
                                         </td>
+                                        <td>{{ leave.leave_message }}</td>
+                                        <td>{{ leave.leave_date }}</td>
+                                        <td>{{ leave.id }}</td>
+
                                     </tr>
                                     {% endfor %}
                                 </table>

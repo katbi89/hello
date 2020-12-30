@@ -58,7 +58,7 @@
 
                             <div class="form-group text-right">
                                 <label>المادة العلمية </label>
-                                <select class="form-control text-right" name="course">
+                                <select class="form-control" name="course">
                                     {% for course in courses %}
                                         <option value="{{ course.id }}">{{ course.course_name }}</option>
                                     {% endfor %}
@@ -67,7 +67,7 @@
 
                             <div class="form-group text-right">
                                 <label>المشرف </label>
-                                <select class="form-control text-right" name="staff">
+                                <select class="form-control" name="staff">
                                     {% for staff in staffs %}
                                         <option value="{{ staff.id }}">{{ staff.first_name }} {{ staff.last_name }}</option>
                                     {% endfor %}
