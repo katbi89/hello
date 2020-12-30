@@ -122,11 +122,11 @@
 
                         if(response == "True"){
                             $(".email_error").remove();
-                            $("<span class='email_error' style='color: red; padding: 5px; font-weight: bold;'> Email Not Available. </span>").insertAfter("#id_email")
+                            $("<span class='email_error' style='color: red; padding: 5px; font-weight: bold;'> البريد الإلكتروني غير متوفر </span>").insertAfter("#id_email")
                         }
                         else{
                             $(".email_error").remove();
-                            $("<span class='email_error' style='color: green; padding: 5px; font-weight: bold;'> Email Available. </span>").insertAfter("#id_email")
+                            $("<span class='email_error' style='color: green; padding: 5px; font-weight: bold;'> البريد الإلكتروني متوفر </span>").insertAfter("#id_email")
                         }
                     })
 

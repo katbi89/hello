@@ -37,8 +37,8 @@ class AddStudentForm(forms.Form):
         session_year_list = []
     
     gender_list = (
-        ('Male','Male'),
-        ('Female','Female')
+        ('Male','ذكر'),
+        ('Female','انثى')
     )
     
     course_id = forms.ChoiceField(label="المادة العلمية", choices=course_list, widget=forms.Select(attrs={"class":"form-control"}))

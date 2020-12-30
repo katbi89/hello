@@ -36,10 +36,10 @@ def doLogin(request):
                 # return HttpResponse("Student Login")
                 return redirect('student_home')
             else:
-                messages.error(request, "Invalid Login!")
+                messages.error(request, "تسجيل دخول خاطئ")
                 return redirect('login')
         else:
-            messages.error(request, ugettext("Invalid Login Credentials!"))
+            messages.error(request, ugettext("معلومات تسجيل دخول خاطئة"))
             #return HttpResponseRedirect("/")
             return redirect('login')
 
@@ -49,7 +49,7 @@ def get_user_details(request):
     if request.user != None:
         return HttpResponse("User: "+request.user.email+" User Type: "+request.user.user_type)
     else:
-        return HttpResponse(ugettext("Please Login First"))
+        return HttpResponse(ugettext("الرجاء الدخول أولاً"))
 
 
 
