@@ -1,7 +1,7 @@
 {% extends 'staff_template/base_template.html' %}
 
 {% block page_title %}
-    رسالة الملاحظات
+ الملاحظات
 {% endblock page_title %}
 
 {% block main_content %}
@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">ملاحظة الإجازة </h3>
+                        <h3 class="card-title float-right">إرسال ملاحظة </h3>
                     </div>
                     <!-- /.card-header -->
 
@@ -47,11 +47,11 @@
                             
                     <form method="POST" action="{% url 'staff_feedback_save' %}">
                         {% csrf_token %}
-                        <div class="card-body">
+                        <div class="card-body text-right">
                            
                             <div class="form-group">
                                 <label>رسالة الملاحظة</label>
-                                <textarea name="feedback_message" class="form-control" rows="6" placeholder="محتوى الرسالة"></textarea>
+                                <textarea name="feedback_message" class="form-control text-right" rows="6" placeholder="محتوى الرسالة"></textarea>
                             </div>
 
 
@@ -59,7 +59,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">إرسال الملاحظة</button>
+                        <button type="submit" class="btn btn-primary float-right">إرسال الملاحظة</button>
                         </div>
 
                     </form>
@@ -76,7 +76,7 @@
                 <div class="col-md-12">
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">تاريخ الملاحظات</h3>
+                            <h3 class="card-title float-right">تاريخ الملاحظات</h3>
                         </div>
 
                         <div class="card-body">
@@ -84,17 +84,19 @@
                                 <table class="table">
                                     <thead class="thead-light">
                                     <tr>
-                                        <th>الرقم</th>
-                                        <th>رسالة الملاحظة</th>
                                         <th>الرد على الملاحظة</th>
+                                        <th>رسالة الملاحظة</th>
+                                        <th>الرقم</th>
+
                                     </tr>
                                     </thead>
                                     
                                     {% for row in feedback_data %}
                                     <tr>
-                                        <td>{{ row.id }}</td>
-                                        <td>{{ row.feedback }}</td>
                                         <td>{{ row.feedback_reply }}</td>
+                                        <td>{{ row.feedback }}</td>
+                                        <td>{{ row.id }}</td>
+
                                     </tr>
                                     {% endfor %}
                                 </table>

@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">أخذ الحضور</h3>
+                        <h3 class="card-title float-right">أخذ التفقد</h3>
                     </div>
                     <!-- /.card-header -->
 
@@ -46,7 +46,7 @@
                                 {% endif %}
                             
 
-                        <div class="card-body">
+                        <div class="card-body text-right">
                            
                             <div class="form-group">
                                 <label>الدرس </label>
@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Session Year </label>
+                                <label>الجلسة </label>
                                 <select class="form-control" name="session_year" id="session_year">
                                     {% for session_year in session_years %}
                                         <option value="{{ session_year.id }}">{{ session_year.session_start_year }} to {{ session_year.session_end_year }}</option>
@@ -71,7 +71,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="button" class="btn btn-primary" id="fetch_student">إحضار طالب</button>
+                        <button type="button" class="btn btn-primary float-right" id="fetch_student">إرسال</button>
                         </div>
 
                         {% comment %} Displaying Students Here {% endcomment %}
@@ -172,7 +172,7 @@
                     }
                     else
                     {
-                        alert("Failed to حفظ الحضور!")
+                        alert("فشل في حفظ الحضور")
                     }
                     location.reload()
                     

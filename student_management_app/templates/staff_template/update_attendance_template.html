@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">عرض تحديث الحضور</h3>
+                        <h3 class="card-title float-right">عرض تحديث الحضور</h3>
                     </div>
                     <!-- /.card-header -->
 
@@ -46,7 +46,7 @@
                                 {% endif %}
                             
 
-                        <div class="card-body">
+                        <div class="card-body text-right">
                            
                             <div class="form-group">
                                 <label>الدرس </label>
@@ -71,7 +71,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                            <button type="button" class="btn btn-primary" id="fetch_attendance">إحضار تاريخ التفقد</button>
+                            <button type="button" class="btn btn-primary float-right" id="fetch_attendance">إحضار تاريخ التفقد</button>
                         </div>
 
                         <div class="card-footer">
@@ -162,7 +162,7 @@
                     }
                     else
                     {
-                        $("#error_attendance").html("No Attendance Data Found.");
+                        $("#error_attendance").html("لا يوجد تفقد في هذا التاريخ");
                         $("#error_attendance").show();
                         $("#attendance_block").hide();
                         $("#fetch_student_block").hide();
@@ -172,7 +172,7 @@
                 })
 
                 .fail(function(){
-                    alert("Error in getting Attendance Dates.")
+                    alert("خطأ في إحضار التفقد")
                     $("#error_attendance").html("");
                     $("#fetch_student_block").hide();
                     $("#attendance_block").hide();

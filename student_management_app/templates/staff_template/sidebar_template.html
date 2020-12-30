@@ -9,7 +9,7 @@
       </a>
 
       <!-- Sidebar -->
-      <div class="sidebar">
+      <div class="sidebar text-right">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
@@ -29,66 +29,72 @@
             <li class="nav-item">
               {% url 'staff_home' as staff_home %}
               <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   الرئيسية
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'staff_take_attendance' as staff_take_attendance %}
               <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}">
-                <i class="nav-icon fas fa-calendar-plus"></i>
                 <p>
                   أخذ التفقد
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-calendar-plus"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'staff_update_attendance' as staff_update_attendance %}
               <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}">
-                <i class="nav-icon fas fa-calendar-alt"></i>
                 <p>
                   عرض تحديث الحضور
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-calendar-alt"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'staff_add_result' as staff_add_result %}
               <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}">
-                <i class="nav-icon fas fa-tasks"></i>
                 <p>
                   إضافة نتيجة
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-tasks"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'staff_apply_leave' as staff_apply_leave %}
               <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}">
-                <i class="nav-icon fas fa-envelope-open-text"></i>
                 <p>
-                  تطبيق الإجازة 
+                 طلب إجازة  
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-envelope-open-text"></i>
+
               </a>
             </li>
 
             <li class="nav-item">
               {% url 'staff_feedback' as staff_feedback %}
               <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}">
-                <i class="nav-icon fas fa-comments"></i>
                 <p>
-                  ملاحظة
+                  الملاحظات
                   {% comment %} <span class="right badge badge-danger">جديد</span> {% endcomment %}
                 </p>
+                <i class="nav-icon fas fa-comments"></i>
+
               </a>
             </li>
 
