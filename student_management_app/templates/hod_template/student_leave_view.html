@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">إجازة طالب</h3>
+                            <h3 class="card-title float-right">إجازة طالب</h3>
                         </div>
                         <!-- /.card-header -->
 
@@ -24,25 +24,19 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th>الرقم</th>
-                                    <th>رقم الطالب</th>
-                                    <th>اسم الطالب</th>
-                                    <th>تاريخ الإجازة </th>
-                                    <th>رسالة الإجازة </th>
-                                    <th>تم التطبيق على </th>
                                     <th>الحدث</th>
+                                    <th>تم التطبيق على </th>
+                                    <th>رسالة الإجازة </th>
+                                    <th>تاريخ الإجازة </th>
+                                    <th>اسم الطالب</th>
+                                    <th>رقم الطالب</th>
+                                    <th>الرقم</th>
                                 </tr>
                                 </thead>
 
                                 {% for leave in leaves %}
                                 <tbody>
                                 <tr>
-                                    <td>{{ leave.id }}</td>
-                                    <td>{{ leave.student_id.admin.id }}</td>
-                                    <td>{{ leave.student_id.admin.first_name }} {{ feedback.student_id.admin.last_name }}</td> 
-                                    <td>{{ leave.leave_date }}</td>
-                                    <td>{{ leave.leave_message }}</td>
-                                    <td>{{ leave.created_at }}</td>
                                     <td>
                                         {% if leave.leave_status == 0 %}
                                             <a href="{% url 'student_leave_approve' leave_id=leave.id %}" class="btn btn-success">قبول</a>
@@ -52,8 +46,13 @@
                                         {% else %}
                                             <button class="btn btn-danger" disabled="disabled">رفض</button>
                                         {% endif %}
-                                        
                                     </td>
+                                    <td>{{ leave.created_at }}</td>
+                                    <td>{{ leave.leave_message }}</td>
+                                    <td>{{ leave.leave_date }}</td>
+                                    <td>{{ leave.student_id.admin.first_name }} {{ feedback.student_id.admin.last_name }}</td> 
+                                    <td>{{ leave.student_id.admin.id }}</td>
+                                    <td>{{ leave.id }}</td>
                                 </tr>
                                 </tbody>
                                 {% endfor %}

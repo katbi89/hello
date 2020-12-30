@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">إضافة درس</h3>
+                        <h3 class="card-title float-right">إضافة درس</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -51,23 +51,23 @@
                             
 
                         <div class="card-body">
-                            <div class="form-group">
+                            <div class="form-group text-right">
                                 <label>اسم الدرس </label>
-                                <input type="text" class="form-control" name="subject" placeholder="أدخل الدرس">
+                                <input type="text" class="form-control text-right" name="subject" placeholder="أدخل الدرس">
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group text-right">
                                 <label>المادة العلمية </label>
-                                <select class="form-control" name="course">
+                                <select class="form-control text-right" name="course">
                                     {% for course in courses %}
                                         <option value="{{ course.id }}">{{ course.course_name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group text-right">
                                 <label>المشرف </label>
-                                <select class="form-control" name="staff">
+                                <select class="form-control text-right" name="staff">
                                     {% for staff in staffs %}
                                         <option value="{{ staff.id }}">{{ staff.first_name }} {{ staff.last_name }}</option>
                                     {% endfor %}
@@ -78,7 +78,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">إضافة درس</button>
+                        <button type="submit" class="btn btn-primary float-right">إضافة درس</button>
                         </div>
                     </form>
                     </div>

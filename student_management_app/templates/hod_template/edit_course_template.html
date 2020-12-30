@@ -1,7 +1,7 @@
 {% extends 'hod_template/base_template.html' %}
 
 {% block page_title %}
-    تعديل المادة | #ID : {{ course.id }}
+    تعديل المادة  العلمية | رقم المادة العلمية : {{ course.id }}
 {% endblock page_title %}
 
 {% block main_content %}
@@ -16,7 +16,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">تعديل المادة</h3>
+                        <h3 class="card-title float-right">تعديل المادة</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -50,10 +50,10 @@
                                 {% endif %}
                             
 
-                        <div class="card-body">
-                            <div class="form-group">
+                        <div class="card-body text-right">
+                            <div class="form-group text-right">
                                 <label>اسم المادة العلمية </label>
-                                <input type="text" class="form-control" name="course" value="{{ course.course_name }}">
+                                <input type="text" class="form-control text-right" name="course" value="{{ course.course_name }}">
                                 <input type="hidden" name="course_id" value="{{ course.id }}" />
                             </div>
 
@@ -61,7 +61,7 @@
                         <!-- /.card-body -->
 
                         <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">تحديث المادة</button>
+                        <button type="submit" class="btn btn-primary float-right">تحديث المادة</button>
                         </div>
                     </form>
                     </div>

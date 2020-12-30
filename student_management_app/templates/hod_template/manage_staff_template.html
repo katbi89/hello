@@ -11,7 +11,7 @@
 <section class="content">
         <div class="container-fluid">
 
-            <a class="btn btn-primary" href="{% url 'add_staff' %}" role="button">+ إضافة مشرف</a> <br/>&nbsp;
+            <a class="btn btn-primary float-right" href="{% url 'add_staff' %}" role="button">+ إضافة مشرف</a> <br/>&nbsp;
 
             {% if messages %}
                                 <div class="form-group">
@@ -44,11 +44,11 @@
                     <!-- general form elements -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">تفاصيل المشرف</h3>
+                            <h3 class="card-title float-right">تفاصيل المشرف</h3>
 
-                            <div class="card-tools">
+                            <div class="card-tools float-left">
                             <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right" بحث>
+                                <input type="text" name="table_search" class="form-control float-right" placeholder="بحث">
 
                                 <div class="input-group-append">
                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -61,32 +61,32 @@
                             <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                <th>الرقم</th>
-                                <th>الاسم الأول</th>
-                                <th>الاسم الأخير</th>
-                                <th>اسم المستخدم</th>
-                                <th>البريد الإلكتروني</th>
-                                <th>العنوان</th>
-                                <th>آخر تسجيل دخول</th>
-                                <th>تاريخ الإنضمام</th>
                                 <th>الحدث</th>
+                                <th>تاريخ الإنضمام</th>
+                                <th>آخر تسجيل دخول</th>
+                                <th>العنوان</th>
+                                <th>البريد الإلكتروني</th>
+                                <th>اسم المستخدم</th>
+                                <th>الاسم الأخير</th>
+                                <th>الاسم الأول</th>
+                                <th>الرقم</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for staff in staffs %}
                                 <tr>
-                                <td>{{ staff.admin.id }}</td>
-                                <td>{{ staff.admin.first_name }}</td>
-                                <td>{{ staff.admin.last_name }}</td>
-                                <td>{{ staff.admin.username }}</td>
-                                <td>{{ staff.admin.email }}</td>
-                                <td>{{ staff.address }}</td>
-                                <td>{{ staff.admin.last_login }}</td>
+                                    <td>
+                                        <a href="{% url 'edit_staff' staff.admin.id %}" class="btn btn-success">تعديل</a> 
+                                        <a href="{% url 'delete_staff' staff.admin.id %}" class="btn btn-danger">حذف</a>
+                                    </td>
                                 <td>{{ staff.admin.date_joined }}</td>
-                                <td>
-                                    <a href="{% url 'edit_staff' staff.admin.id %}" class="btn btn-success">تعديل</a> 
-                                    <a href="{% url 'delete_staff' staff.admin.id %}" class="btn btn-danger">حذف</a>
-                                </td>
+                                <td>{{ staff.admin.last_login }}</td>
+                                <td>{{ staff.address }}</td>
+                                <td>{{ staff.admin.email }}</td>
+                                <td>{{ staff.admin.username }}</td>
+                                <td>{{ staff.admin.last_name }}</td>
+                                <td>{{ staff.admin.first_name }}</td>
+                                <td>{{ staff.admin.id }}</td>
                                 </tr>
                                 {% endfor %}
                                 
