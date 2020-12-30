@@ -1,0 +1,16 @@
+open MySQL
+CREATE DATABASE student_management_system;
+CREATE USER 'student_management_system'@'localhost' identified by 'student_management_password';
+Grant All Privileges on *.* to 'student_management_system'@'localhost';
+
+
+---------------------------------------------------------------------------------------------------
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'student_management_system',
+        'USER': 'student_management_system',
+        'PASSWORD': 'student_management_password',
+        'HOST': 'localhost',
+        'PORT': '3306'
+---------------------------------------------------------
+
+pip install mysqlclient
