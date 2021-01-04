@@ -30,15 +30,15 @@ class AddStudentForm(forms.Form):
         session_years = SessionYearModel.objects.all()
         session_year_list = []
         for session_year in session_years:
-            single_session_year = (session_year.id, str(session_year.session_start_year)+" to "+str(session_year.session_end_year))
+            single_session_year = (session_year.id, str(session_year.session_start_year)+" to " + str(session_year.session_end_year))
             session_year_list.append(single_session_year)
             
     except:
         session_year_list = []
     
     gender_list = (
-        ('Male','ذكر'),
-        ('Female','انثى')
+        ('Male','Male'),
+        ('Female','Female')
     )
     
     course_id = forms.ChoiceField(label="المادة العلمية", choices=course_list, widget=forms.Select(attrs={"class":"form-control"}))
@@ -80,8 +80,8 @@ class EditStudentForm(forms.Form):
 
     
     gender_list = (
-        ('Male','ذكر'),
-        ('Female','انثى')
+        ('Male','Male'),
+        ('Female','Female')
     )
     
     course_id = forms.ChoiceField(label="المادة العلمية", choices=course_list, widget=forms.Select(attrs={"class":"form-control"}))

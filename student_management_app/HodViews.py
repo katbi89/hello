@@ -332,7 +332,7 @@ def add_student(request):
 
 def add_student_save(request):
     if request.method != "POST":
-        messages.error(request, "Invalid Method")
+        messages.error(request, "طريقة اتصال غير صحيحة")
         return redirect('add_student')
     else:
         form = AddStudentForm(request.POST, request.FILES)
